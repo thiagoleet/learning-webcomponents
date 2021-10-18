@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Components</title>
+    <script src="info-box.js"></script>
+    <script src="button.js"></script>
+  </head>
+  <body>
+    <thi-button>Show</thi-button>
+    <thi-info-box>More infos!</thi-info-box>
+
+    <script>
+      const button = document.querySelector("thi-button");
+      const infoEl = document.querySelector("thi-info-box");
+
+      let isHidden = true;
+
+      button.addEventListener("click", () => {
+        if (isHidden) {
+          infoEl.show();
+          button.textContent = "Hide";
+          isHidden = false;
+        } else {
+          infoEl.hide();
+          button.textContent = "Show";
+          isHidden = true;
+        }
+      });
+    </script>
+  </body>
+</html>
